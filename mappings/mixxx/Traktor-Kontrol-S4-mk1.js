@@ -44,10 +44,10 @@ TraktorKontrolS4mk1.init = function(id, debugging) {
 
 
     // Set gain knobs to center value
-    /*for (var i = 0; i <= 3; i++) {
+    for (var i = 0; i <= 3; i++) {
         midi.sendShortMsg(0xB0 + i, 0x3C, 63);
         engine.setValue('[Channel' + (i + 1) + ']', "pregain", true);
-    }*/
+    }
 
     // Set quantize value on for all channels;
     quantizeVal = false;
@@ -504,3 +504,8 @@ TraktorKontrolS4mk1.wheelTurn = function(channel, control, value, status, group)
         engine.setValue(group, 'jog', newValue); // Pitch bend
     }
 }
+
+TraktorKontrolS4mk1.pregainSetOne = function(channel, control, value, status, group) {
+    midi.sendShortMsg(0xB0 + channel, 0x3C, 63);
+    engine.setValue('[Channel' + (channel + 1) + ']', "pregain", true);
+};

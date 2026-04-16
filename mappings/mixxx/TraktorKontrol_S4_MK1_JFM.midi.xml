@@ -2151,42 +2151,42 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>pregain_set_one</key>
+                <key>TraktorKontrolS4mk1.pregainSetOne</key>
                 <description>Set Channel1 Gain to center</description>
                 <status>0xB0</status>
                 <midino>0x3D</midino>
                 <options>
-                    <normal />
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>pregain_set_one</key>
+                <key>TraktorKontrolS4mk1.pregainSetOne</key>
                 <description>Set Channel2 Gain to center</description>
                 <status>0xB1</status>
                 <midino>0x3D</midino>
                 <options>
-                    <normal />
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
                 <group>[Channel3]</group>
-                <key>pregain_set_one</key>
+                <key>TraktorKontrolS4mk1.pregainSetOne</key>
                 <description>Set Channel3 Gain to center</description>
                 <status>0xB2</status>
                 <midino>0x3D</midino>
                 <options>
-                    <normal />
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
                 <group>[Channel4]</group>
-                <key>pregain_set_one</key>
+                <key>TraktorKontrolS4mk1.pregainSetOne</key>
                 <description>Set Channel4 Gain to center</description>
                 <status>0xB3</status>
                 <midino>0x3D</midino>
                 <options>
-                    <normal />
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
