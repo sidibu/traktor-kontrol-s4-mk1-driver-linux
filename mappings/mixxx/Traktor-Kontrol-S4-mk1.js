@@ -49,6 +49,11 @@ TraktorKontrolS4mk1.init = function(id, debugging) {
         engine.setValue('[Channel' + (i + 1) + ']', "pregain", true);
     }*/
 
+    // Set beat jump knobs to center value
+    for (var i = 0; i <= 2; i++) {
+        midi.sendShortMsg(0xB0 + i, 0x13, 63);
+    }
+
     // Set quantize value on for all channels;
     quantizeVal = false;
 
@@ -504,3 +509,17 @@ TraktorKontrolS4mk1.wheelTurn = function(channel, control, value, status, group)
         engine.setValue(group, 'jog', newValue); // Pitch bend
     }
 }
+
+TraktorKontrolS4mk1.beatjump = (function () {
+    let lastValue = 63;
+
+    return function(channel, control, value, status, group) {
+        if (value > lastValue) {
+            script.triggerControl(group, "beatjump_forward");
+        } else if (value < lastValue) {
+            script.triggerControl(group, "beatjump_backward");
+        }
+
+        lastValue = value;
+    };
+})();

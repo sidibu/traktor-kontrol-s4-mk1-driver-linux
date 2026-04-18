@@ -540,45 +540,40 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>beatjump_forward</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <key>TraktorKontrolS4mk1.beatjump</key>
                 <status>0xB0</status>
                 <midino>0x13</midino>
                 <options>
-                    <normal/>
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>beatjump_forward</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <key>TraktorKontrolS4mk1.beatjump</key>
                 <status>0xB1</status>
                 <midino>0x13</midino>
                 <options>
-                    <normal/>
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
                 <group>[Channel3]</group>
-                <key>beatjump_forward</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <key>TraktorKontrolS4mk1.beatjump</key>
                 <status>0xB2</status>
                 <midino>0x13</midino>
                 <options>
-                    <normal/>
+                    <Script-Binding/>
                 </options>
             </control>
             <control>
                 <group>[Channel4]</group>
-                <key>beatjump_forward</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <key>TraktorKontrolS4mk1.beatjump</key>
                 <status>0xB3</status>
                 <midino>0x13</midino>
                 <options>
-                    <normal/>
+                    <Script-Binding/>
                 </options>
             </control>
-
             <control>
                 <group>[Master]</group>
                 <key>headSplit</key>
@@ -1146,46 +1141,6 @@
                     <script-binding/>
                 </options>
             </control>-->
-            <control>
-                <group>[Channel1]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB0</status>
-                <midino>0x14</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB1</status>
-                <midino>0x14</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel3]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB2</status>
-                <midino>0x14</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel4]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB3</status>
-                <midino>0x14</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
             <control>
                 <group>[EffectRack1_EffectUnit1]</group>
                 <key>mix</key>
@@ -1959,46 +1914,6 @@
                     <script-binding/>
                 </options>
             </control>
-            <!--<control>
-                <group>[Channel1]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB0</status>
-                <midino>0x32</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB1</status>
-                <midino>0x32</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel3]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB2</status>
-                <midino>0x32</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel4]</group>
-                <key>beatjump_backward</key>
-                <description>MIDI Learned from 2 messages.</description>
-                <status>0xB3</status>
-                <midino>0x32</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>-->
             <!--<control>
                 <group>[Channel1]</group>
                 <key>loop_exit</key>
