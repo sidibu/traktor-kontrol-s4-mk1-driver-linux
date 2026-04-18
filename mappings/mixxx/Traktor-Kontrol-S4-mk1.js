@@ -506,6 +506,8 @@ TraktorKontrolS4mk1.wheelTurn = function(channel, control, value, status, group)
 }
 
 TraktorKontrolS4mk1.pregainSetOne = function(channel, control, value, status, group) {
-    midi.sendShortMsg(0xB0 + channel, 0x3C, 63);
-    engine.setValue(group, "pregain", true);
+    if(value) {
+        midi.sendShortMsg(0xB0 + channel, 0x3C, 63);
+        engine.setValue(group, "pregain", 1);
+    }
 };
