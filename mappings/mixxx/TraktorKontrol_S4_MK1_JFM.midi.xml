@@ -424,7 +424,7 @@
                 <key>headMix</key>
                 <description>MIDI Learned from 721 messages.</description>
                 <status>0xB4</status>
-                <midino>0x04</midino>
+                <midino>0x0B</midino>
                 <options>
                     <normal/>
                 </options>
