@@ -504,3 +504,14 @@ TraktorKontrolS4mk1.wheelTurn = function(channel, control, value, status, group)
         engine.setValue(group, 'jog', newValue); // Pitch bend
     }
 }
+
+// The beat jump control nobs CC19 must both be set to relative in Native Instruments Controller Editor
+TraktorKontrolS4mk1.beatjump = function(channel, control, value, status, group) {
+    if (value === 0x01) {
+        script.triggerControl(group, "beatjump_forward");
+    } else if (value === 0x7F) {
+        script.triggerControl(group, "beatjump_backward");
+    } else {
+        console.log("Unexpected beatjump value: ", value);
+    }
+};
