@@ -468,39 +468,34 @@ TraktorKontrolS4mk1.vuCallback4 = function(channel, control, value, status, grou
 
 // The button that enables/disables scratching
 TraktorKontrolS4mk1.wheelTouch = function(channel, control, value, status, group) {
-    var deckNumber = script.deckFromGroup(group);
-    if ((status & 0xF0) === 0x90) { // If button down
-        //if (value === 0x7F) { // Some wheels send 0x90 on press and release, so you need to check the value
-        var alpha = 1.0 / 8;
-        var beta = alpha / 32;
-        engine.scratchEnable(deckNumber, 128, 8, alpha, beta);
-    } else { // If button up
-        engine.scratchDisable(deckNumber);
+    const deck = script.deckFromGroup(group);
+
+    if (value === 0x7F) {
+        engine.scratchEnable(deck, 50, 33 + 1/3, 1/8, 1/8/32, false);
+    } else if (value === 0x00) {
+        engine.scratchDisable(deck, false);
+    } else {
+        console.log("Unexpected jog touch value: ", value);
     }
-}
+};
 
 // The wheel that actually controls the scratching
 TraktorKontrolS4mk1.wheelTurn = function(channel, control, value, status, group) {
-    // --- Choose only one of the following!
+    const delta =
+        value === 0x01 ?  1 :
+        value === 0x7F ? -1 :
+        null;
 
-    // A: For a control that centers on 0:
-    var newValue;
-    if (value < 64) {
-        newValue = value;
-    } else {
-        newValue = value - 128;
+    if (delta === null) {
+        console.log("Unexpected jog turn value: ", value);
+        return;
     }
 
-    // B: For a control that centers on 0x40 (64):
-    //var newValue = value - 64;
+    const deck = script.deckFromGroup(group);
 
-    // --- End choice
-
-    // In either case, register the movement
-    var deckNumber = script.deckFromGroup(group);
-    if (engine.isScratching(deckNumber)) {
-        engine.scratchTick(deckNumber, newValue); // Scratch!
+    if (engine.isScratching(deck)) {
+        engine.scratchTick(deck, delta);
     } else {
-        engine.setValue(group, 'jog', newValue); // Pitch bend
+        engine.setValue(group, "jog", delta);
     }
-}
+};
