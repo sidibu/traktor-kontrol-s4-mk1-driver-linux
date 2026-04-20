@@ -60,6 +60,8 @@ TraktorKontrolS4mk1.init = function(id, debugging) {
     }
     for (var i = 0; i <= 15; i++) engine.setValue('[Sampler' + (i + 1) + ']', "quantize", quantizeVal);
     //midi.sendShortMsg(0xB4, 0x51, 100);
+
+    engine.setValue("[Master]", "headMix", 0);
 };
 
 TraktorKontrolS4mk1.enableBeatLoop = function(channel, control, value, status, group) {
